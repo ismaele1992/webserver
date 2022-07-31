@@ -1,14 +1,14 @@
 export async function getTemperature() {
 
-    const response = await fetch('http://localhost:80');
+    const response = await fetch('http://192.168.2.200:80');
     return await response.json();
 }
 
 export async function get24HTemperature() {
     let startdate = DateToString(GetPreviousDay());
     let enddate = DateToString(new Date);
-    console.log(`http://localhost/24hours?startdate=${startdate}&enddate=${enddate}`);
-    const response = await fetch(`http://localhost/24hours?startdate=${startdate}&enddate=${enddate}`);
+    console.log(`http://192.168.2.200/24hours?startdate=${startdate}&enddate=${enddate}`);
+    const response = await fetch(`http://192.168.2.200:80/24hours?startdate=${startdate}&enddate=${enddate}`);
     return await response.json();
 }
 
