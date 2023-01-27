@@ -93,7 +93,7 @@ app.get('/last', (req, res) => {
             var queryDatabase = () => {
                 return new Promise((resolve, reject) => {
                     let collection = dbo.collection("terrarium");
-                    var query = { time : -1 };
+                    var query = { _id:-1 };
                     collection.find().sort(query).limit(1).toArray(function(err, data) {
                         err
                             ? reject(err)
